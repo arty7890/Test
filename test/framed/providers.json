@@ -1,0 +1,29 @@
+{
+  "project": "Framed",
+  "providers": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "status": "active-first-provider",
+      "domain": "chatgpt.framed.test.expert-e-t.com",
+      "entry": "./chatgpt/index.html"
+    }
+  ],
+  "tiers": [
+    {
+      "id": "free",
+      "label": "2 frames",
+      "frames": 2
+    },
+    {
+      "id": "starter",
+      "label": "3 frames",
+      "frames": 3
+    },
+    {
+      "id": "pro",
+      "label": "4 frames",
+      "frames": 4
+    }
+  ]
+}

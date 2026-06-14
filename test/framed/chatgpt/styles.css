@@ -1,0 +1,263 @@
+:root {
+  --ink: #17211b;
+  --muted: #66736b;
+  --paper: #f5f2ea;
+  --panel: #fffdf8;
+  --line: #d8d1c1;
+  --green: #0f6b52;
+  --green-soft: #dff1e7;
+  --blue: #285c8f;
+  --amber: #a96b15;
+  --alert: #c93b31;
+  --shadow: 0 20px 60px rgba(33, 37, 31, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(15, 107, 82, 0.12), transparent 38%),
+    linear-gradient(315deg, rgba(40, 92, 143, 0.12), transparent 34%),
+    var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", "Noto Sans", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.workspace {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-height: 100vh;
+  gap: 14px;
+  padding: 18px;
+}
+
+.topbar,
+.statusbar {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 248, 0.88);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.topbar {
+  padding: 18px;
+}
+
+.identity {
+  min-width: 240px;
+}
+
+.project,
+.label,
+.frame-kicker {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 3px;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.identity p {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.tier-switcher {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(92px, 1fr));
+  gap: 8px;
+  min-width: 330px;
+}
+
+.tier {
+  display: grid;
+  place-items: center;
+  min-height: 72px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.tier span {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.tier small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tier.is-active {
+  border-color: var(--green);
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.statusbar {
+  padding: 12px 16px;
+}
+
+.statusbar div {
+  display: grid;
+  gap: 3px;
+}
+
+.statusbar strong {
+  overflow-wrap: anywhere;
+}
+
+.frames {
+  display: grid;
+  gap: 14px;
+  min-height: 0;
+}
+
+.workspace[data-frame-count="2"] .frames {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.workspace[data-frame-count="3"] .frames {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.workspace[data-frame-count="4"] .frames {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.frame {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 360px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.frame.has-response {
+  border-color: var(--alert);
+  box-shadow: 0 0 0 3px rgba(201, 59, 49, 0.14), var(--shadow);
+}
+
+.frame-header,
+.frame-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+}
+
+.frame-header {
+  border-bottom: 1px solid var(--line);
+}
+
+h2 {
+  margin-top: 2px;
+  font-size: 18px;
+}
+
+.frame-state {
+  min-width: 92px;
+  border-radius: 999px;
+  background: #edf0f4;
+  color: var(--blue);
+  padding: 6px 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.frame.has-response .frame-state {
+  background: #fde7e2;
+  color: var(--alert);
+}
+
+.frame-surface {
+  display: grid;
+  min-height: 220px;
+  padding: 12px;
+}
+
+.provider-placeholder {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  border: 1px dashed var(--line);
+  background:
+    linear-gradient(90deg, rgba(15, 107, 82, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(40, 92, 143, 0.06) 1px, transparent 1px),
+    #fbfaf5;
+  background-size: 28px 28px;
+  color: var(--muted);
+  text-align: center;
+  padding: 16px;
+}
+
+.provider-placeholder strong {
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.frame-actions {
+  border-top: 1px solid var(--line);
+}
+
+.frame-actions button {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.mark-response {
+  flex: 1;
+}
+
+.clear-response {
+  width: 86px;
+}
+
+@media (max-width: 900px) {
+  .topbar,
+  .statusbar {
+    display: grid;
+  }
+
+  .tier-switcher {
+    min-width: 0;
+  }
+
+  .workspace[data-frame-count] .frames {
+    grid-template-columns: 1fr;
+  }
+}

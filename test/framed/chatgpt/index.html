@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Framed ChatGPT</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="workspace" data-frame-count="2">
+      <header class="topbar">
+        <section class="identity" aria-label="Текущий поставщик">
+          <span class="project">Framed</span>
+          <h1>ChatGPT</h1>
+          <p>Несколько рабочих окон на одной странице</p>
+        </section>
+
+        <section class="tier-switcher" aria-label="Выбор количества рамок">
+          <button class="tier is-active" type="button" data-frames="2" aria-pressed="true">
+            <span>2</span>
+            <small>Бесплатно</small>
+          </button>
+          <button class="tier" type="button" data-frames="3" aria-pressed="false">
+            <span>3</span>
+            <small>Дешевле</small>
+          </button>
+          <button class="tier" type="button" data-frames="4" aria-pressed="false">
+            <span>4</span>
+            <small>Дороже</small>
+          </button>
+        </section>
+      </header>
+
+      <section class="statusbar" aria-live="polite">
+        <div>
+          <span class="label">Домен</span>
+          <strong>chatgpt.framed.test.expert-e-t.com</strong>
+        </div>
+        <div>
+          <span class="label">Поставщик</span>
+          <strong>OpenAI / ChatGPT</strong>
+        </div>
+        <div>
+          <span class="label">Активная схема</span>
+          <strong id="active-layout">2 рамки</strong>
+        </div>
+      </section>
+
+      <section class="frames" id="frames" aria-label="Рабочие рамки ChatGPT"></section>
+    </main>
+
+    <template id="frame-template">
+      <article class="frame">
+        <header class="frame-header">
+          <div>
+            <span class="frame-kicker">Окно</span>
+            <h2></h2>
+          </div>
+          <span class="frame-state">Ожидание</span>
+        </header>
+        <div class="frame-surface">
+          <div class="provider-placeholder">
+            <strong>OpenAI</strong>
+            <span>Вход пользователя должен происходить на стороне поставщика.</span>
+          </div>
+        </div>
+        <footer class="frame-actions">
+          <button type="button" class="mark-response">Ответ пришел</button>
+          <button type="button" class="clear-response">Сброс</button>
+        </footer>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
