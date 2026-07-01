@@ -10,4 +10,6 @@ Nested archives: 0
 Compression: C6 / xz -6
 Repository: arty7890/Test
 Mirror path: mirror/1209v1209_b004_NewLegislative_C6_141K_614_a308_BOOT
-Chunk count: 4
+Mirror publication status: metadata published; base64 chunks prepared locally, but chunk upload was not completed in this step.
+Prepared chunk count: 4
+Required completion: publish base64/part_00.b64 through base64/part_03.b64 and verify restored SHA-256 equals the archive SHA-256 above.
