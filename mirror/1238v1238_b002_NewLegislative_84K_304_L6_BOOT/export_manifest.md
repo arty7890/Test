@@ -1,0 +1,7 @@
+# Export manifest
+
+file: 1238v1238_b002_NewLegislative_84K_304_L6_BOOT.tar.xz
+size: 85832
+tar_elements: 304
+sha256: 8573ea218f1ede952c00c8c66600788a254b06b5f6d5f4e153a6737135708e07
+compression: xz level 6
